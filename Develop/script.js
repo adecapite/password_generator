@@ -9,9 +9,9 @@ function writePassword(){
     {
       length = window.prompt("Password must be between 8-128 characters.")
     }
-  // Asks user if they want special characters.
+   // Asks user if they want special characters.
     var specialCharacters = window.prompt("Do you want special characters? Y/N")
-    if(specialCharacters.toUpperCase === "Y" || pecialCharacters.toUpperCase === "N")
+    if(specialCharacters.toUpperCase === "Y" || specialCharacters.toUpperCase === "N")
     {
       if(specialCharacters.toUpperCase === "Y")
       {
@@ -21,15 +21,12 @@ function writePassword(){
       {
         specialCharacters = false;
       }
-    }else
-    {
-      specialCharacters = window.prompt ("Please use only captial Y and N for your response.")
-    }
-  }
+    }else;
+    
 
-  var upperCase = window.prompt ("Do you need uppercase letters? Y/N" )
-  if(upperCase.toUpperCase === "Y" || pecialCharacters.toUpperCase === "N")
-  {
+    var upperCase = window.prompt ("Do you need an uppercase letter? Y/N" )
+      if(upperCase.toUpperCase === "Y" || specialCharacters.toUpperCase === "N")
+    {
       if(upperCase.toUpperCase === "Y")
       {
         upperCase = true;
@@ -38,33 +35,31 @@ function writePassword(){
       {
         upperCase = false;
       }
-    }else
+    }else;
+    
+
+    var lowerCase = window.prompt ("Do you need lower case letters? Y/N" )
+    if(upperCase.toUpperCase === "Y" || specialCharacters.toUpperCase === "N")
     {
-      upperCase = window.prompt ("Please use only captial Y and N for your response.")
-    }
-  }
-    var lowerCase = window.prompt("Do you need a lower case letters? Y/N")
-    if(upperCase.toUpperCase === "Y" || pecialCharacters.toUpperCase === "N")
-  {
-      if(lowerCase.toUpperCase === "Y")
+      if(upperCase.toUpperCase === "Y")
       {
-        lowerCase = true;
+        upperCase = true;
       }
       else
       {
-        lowerCase = false;
+        upperCase = false;
       }
-    }else
-    {
-      lowerCase = window.prompt ("Please use only captial Y and N for your response.")
-    }
+    }else;
+    
+  }
+
   
 
 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
